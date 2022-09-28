@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>八股文（一） | CicadaOnTheTree</title><meta name="author" content="Vanessa Yao"><meta name="copyright" content="Vanessa Yao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="tcp和http区别 TCP协议是传输层协议，主要解决数据如何在网络中传输，而HTTP是应用层协议，主要解决如何包装数据。从本质上来说，二者没有可比性。Http协议是建立在TCP协议基础之上的，当浏览器需要从服务器获取网页数据的时候，会发出一次Http请求。Http会通过TCP建立起一个到服务器的连接通道，当本次请求需要的数据完毕后，Http会立即将TCP连接断开，这个过程是很短的，所以Http连">
+<meta property="og:type" content="article">
+<meta property="og:title" content="八股文（一）">
+<meta property="og:url" content="https://vanessayaoyao.github.io/2022/09/28/bagu1/index.html">
+<meta property="og:site_name" content="CicadaOnTheTree">
+<meta property="og:description" content="tcp和http区别 TCP协议是传输层协议，主要解决数据如何在网络中传输，而HTTP是应用层协议，主要解决如何包装数据。从本质上来说，二者没有可比性。Http协议是建立在TCP协议基础之上的，当浏览器需要从服务器获取网页数据的时候，会发出一次Http请求。Http会通过TCP建立起一个到服务器的连接通道，当本次请求需要的数据完毕后，Http会立即将TCP连接断开，这个过程是很短的，所以Http连">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://images.pexels.com/photos/10154570/pexels-photo-10154570.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+<meta property="article:published_time" content="2022-09-28T01:05:23.000Z">
+<meta property="article:modified_time" content="2022-09-28T01:06:10.964Z">
+<meta property="article:author" content="Vanessa Yao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.pexels.com/photos/10154570/pexels-photo-10154570.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://vanessayaoyao.github.io/2022/09/28/bagu1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '八股文（一）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-09-28 09:06:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">36</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://images.pexels.com/photos/10154570/pexels-photo-10154570.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">CicadaOnTheTree</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">八股文（一）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-09-28T01:05:23.000Z" title="Created 2022-09-28 09:05:23">2022-09-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-09-28T01:06:10.964Z" title="Updated 2022-09-28 09:06:10">2022-09-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="八股文（一）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h4 id="tcp和http区别"><a href="#tcp和http区别" class="headerlink" title="tcp和http区别"></a>tcp和http区别</h4><blockquote>
+<p>TCP协议是传输层协议，主要解决数据如何在网络中传输，而HTTP是应用层协议，主要解决如何包装数据。从本质上来说，二者没有可比性。Http协议是建立在TCP协议基础之上的，当浏览器需要从服务器获取网页数据的时候，会发出一次Http请求。Http会通过TCP建立起一个到服务器的连接通道，当本次请求需要的数据完毕后，Http会立即将TCP连接断开，这个过程是很短的，所以Http连接是一种短连接，是一种无状态的连接。</p>
+</blockquote>
+<h4 id="为什么三次握手，如果两次握手会怎么样"><a href="#为什么三次握手，如果两次握手会怎么样" class="headerlink" title="为什么三次握手，如果两次握手会怎么样"></a>为什么三次握手，如果两次握手会怎么样</h4><blockquote>
+<p>建立连接的过程是利用客户服务器模式，假设主机A为客户端，主机B为服务器端。</p>
+<p>（1）TCP的三次握手过程：主机A向B发送连接请求；主机B对收到的主机A的报文段进行确认；主机A再次对主机B的确认进行确认。请求连接-&gt; 同意并请求连接-&gt;同意</p>
+<p>（2）采用三次握手是为了防止<strong>失效的连接请求报文段</strong>突然又传送到主机B，因而产生错误。失效的连接请求报文段是指：主机A发出的连接请求没有收到主机B的确认，于是经过一段时间后，主机A又重新向主机B发送连接请求，且建立成功，顺序完成数据传输。考虑这样一种特殊情况，主机A第一次发送的连接请求并没有丢失，而是因为网络节点导致延迟达到主机B，主机B以为是主机A又发起的新连接，于是主机B同意连接，并向主机A发回确认，但是此时主机A根本不会理会，主机B就一直在等待主机A发送数据，导致主机B的资源浪费。</p>
+</blockquote>
+<h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4><blockquote>
+<p>请求关闭-&gt;同意-&gt;请求关闭-&gt;同意</p>
+</blockquote>
+<h4 id="http请求包含哪几个部分"><a href="#http请求包含哪几个部分" class="headerlink" title="http请求包含哪几个部分"></a>http请求包含哪几个部分</h4><blockquote>
+<p>请求行、请求头、请求体</p>
+<p>GET/sample.jspHTTP/1.1<br>Accept:image/gif.image/jpeg,/<br>Accept-Language:zh-cn<br>Connection:Keep-Alive<br>Host:localhost<br>User-Agent:Mozila/4.0(compatible;MSIE5.01;Window NT5.0)<br>Accept-Encoding:gzip,deflate</p>
+<p>username=jinqiao&amp;password=1234</p>
+<p>1xx：指示信息–表示请求已接收，继续处理<br>2xx：成功–表示请求已被成功接收、理解、接受<br>3xx：重定向–要完成请求必须进行更进一步的操作。<br>4xx：客户端错误–请求有语法错误或请求无法实现。<br>5xx：服务器端错误–服务器未能实现合法的请求。</p>
+</blockquote>
+<h4 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h4><blockquote>
+<ul>
+<li><strong>MyISAM：</strong>MySQL5.5之前的默认存储引擎，在插入和查询的情况下性能很高，但是它不支持事务，只能添加表级锁。</li>
+<li><strong>InnoDB：</strong>MySQL5.5之后的默认存储引擎，它支持ACID事务、行级锁、外键，但是性能比不过MyISAM，更加消耗资源。</li>
+<li><strong>Memory：</strong>数据都存放在内存中，数据库重启或发生崩溃，表中的数据都将消失。</li>
+</ul>
+</blockquote>
+<h4 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h4><blockquote>
+<p>事务的四大特性分别是：原子性、一致性、隔离性、持久性</p>
+<ul>
+<li>read uncommitted读未提交: 能够读取到其他事务中未提交的内容，存在脏读问题。</li>
+<li>read committed读提交: 只能读取其他事务已经提交的内容，存在不可重复读问题。</li>
+<li>repeatable可重复读: 在读取某行后不允许其他事务操作此行，直到事务结束，但是依然存在幻读问题。</li>
+<li>serializable可序化: 一个事务的开始必须等待另一个事务的完成</li>
+</ul>
+</blockquote>
+<h4 id="Mysql索引类型及底层实现"><a href="#Mysql索引类型及底层实现" class="headerlink" title="Mysql索引类型及底层实现"></a>Mysql索引类型及底层实现</h4><blockquote>
+<ul>
+<li><p>单列索引</p>
+<ul>
+<li><p>normal 普通索引</p>
+</li>
+<li><p>unique 唯一索引</p>
+</li>
+<li><p>spatial 空间索引，不常用</p>
+</li>
+<li><p>fulltext 全文索引 </p>
+<p>SELECT * FROM articles WHERE MATCH (body) AGAINST (‘database’);</p>
+<p>SELECT * FROM articles WHERE body like ‘%database%’;</p>
+</li>
+</ul>
+</li>
+<li><p>组合索引</p>
+</li>
+</ul>
+<p>Hash表和B-Tree</p>
+</blockquote>
+<h4 id="Mysql锁机制"><a href="#Mysql锁机制" class="headerlink" title="Mysql锁机制"></a>Mysql锁机制</h4><blockquote>
+<p>从对数据的操作类型上来说，锁分为读锁和写锁：</p>
+<ul>
+<li><strong>读锁：</strong>也叫共享锁，当一个事务添加了读锁后，其他的事务也可以添加读锁或是读取数据，但是不能进行写操作，只能等到所有的读锁全部释放。</li>
+<li><strong>写锁：</strong>也叫排他锁，当一个事务添加了写锁后，其他事务不能读不能写也不能添加任何锁，只能等待当前事务释放锁。</li>
+</ul>
+<p>从锁的作用范围上划分，分为全局锁、表锁和行锁：</p>
+<ul>
+<li><strong>全局锁：</strong>锁作用于全局，整个数据库的所有操作全部受到锁限制。</li>
+<li><strong>表锁：</strong>锁作用于整个表，所有对表的操作都会收到锁限制。</li>
+<li><strong>行锁：</strong>锁作用于表中的某一行，只会通过锁限制对某一行的操作（仅InnoDB支持）<ul>
+<li>记录锁</li>
+<li>间隙锁</li>
+<li>临键锁</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="redis-的单线程体现在哪里"><a href="#redis-的单线程体现在哪里" class="headerlink" title="redis 的单线程体现在哪里"></a>redis 的单线程体现在哪里</h4><blockquote>
+<p>Redis客户端对服务端的每次调用都经历了发送命令，执行命令，返回结果三个过程。其中执行命令阶段，由于Redis是单线程来处理命令的，所有每一条到达服务端的命令不会立刻执行，所有的命令都会进入一个队列中，然后逐个被执行。并且多个客户端发送的命令的执行顺序是不确定的。但是可以确定的是不会有两条命令被同时执行，不会产生并发问题，这就是Redis的单线程基本模型。</p>
+</blockquote>
+<h4 id="多线程-volatile与synchronized关键字"><a href="#多线程-volatile与synchronized关键字" class="headerlink" title="多线程 volatile与synchronized关键字"></a>多线程 volatile与synchronized关键字</h4><blockquote>
+<p>并发的三个概念</p>
+<p><strong>原子性</strong>：一个操作或多个操作要么执行且在执行过程中不被任何因素打断，要么不执行。（基本数据读取，赋值（数据赋值给变量）都是原子性操作）。</p>
+<p><strong>可见性</strong>：多个线程访问一个变量，当一个线程改变了变量的值，其他线程是可以立即看到新值。</p>
+<p><strong>有序性</strong>：程序执行按照代码的先后顺序。 涉及指令重排序：处理器为提高运行效率，对代码执行顺序进行优化，不保证程序按照代码先后顺序执行，但保证结果与代码顺序执行结果一致。重排序不会影响单线程操作，但对多线程操作可能会产生影响。</p>
+<p>volatile轻量级线程同步关键字不能保证原子性，可以保证有序性</p>
+<p>synchronized关键字又被称为重量级锁</p>
+<p><strong>volatile与synchronized的区别</strong><br>1、volatile本质是在告诉jvm当前变量在寄存器（工作内存）中的值是不确定的，需要从主存中读取； synchronized则是锁定当前变量，只有当前线程可以访问该变量，其他线程被阻塞住。</p>
+<p>2、volatile仅能使用在变量级别；synchronized则可以使用在变量、方法、和类级别的。</p>
+<p>3、volatile仅能实现变量的修改可见性，不能保证原子性；而synchronized则可以保证变量的修改可见性和原子性。</p>
+<p>4、volatile不会造成线程的阻塞；synchronized可能会造成线程的阻塞。</p>
+<p>5、volatile标记的变量不会被编译器优化；synchronized标记的变量可以被编译器优化。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Vanessa Yao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://vanessayaoyao.github.io/2022/09/28/bagu1/">https://vanessayaoyao.github.io/2022/09/28/bagu1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://images.pexels.com/photos/10154570/pexels-photo-10154570.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/09/06/stack-queue-and-tree/"><img class="next-cover" src="https://s1.ax1x.com/2022/09/06/v7xLvQ.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">栈、队列和树</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Vanessa Yao</div><div class="author-info__description">我要握住一个最美的梦给未来的自己</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">36</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/VanessaYaoyao"><i class="fab fa-github"></i><span>My Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/VanessaYaoyao" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:929228571@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">记录自己的学习过程和心路历程，冲冲冲！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#tcp%E5%92%8Chttp%E5%8C%BA%E5%88%AB"><span class="toc-number">1.</span> <span class="toc-text">tcp和http区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%B8%A4%E6%AC%A1%E6%8F%A1%E6%89%8B%E4%BC%9A%E6%80%8E%E4%B9%88%E6%A0%B7"><span class="toc-number">2.</span> <span class="toc-text">为什么三次握手，如果两次握手会怎么样</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="toc-number">3.</span> <span class="toc-text">四次挥手</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#http%E8%AF%B7%E6%B1%82%E5%8C%85%E5%90%AB%E5%93%AA%E5%87%A0%E4%B8%AA%E9%83%A8%E5%88%86"><span class="toc-number">4.</span> <span class="toc-text">http请求包含哪几个部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="toc-number">5.</span> <span class="toc-text">存储引擎</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="toc-number">6.</span> <span class="toc-text">事务隔离级别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Mysql%E7%B4%A2%E5%BC%95%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="toc-number">7.</span> <span class="toc-text">Mysql索引类型及底层实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Mysql%E9%94%81%E6%9C%BA%E5%88%B6"><span class="toc-number">8.</span> <span class="toc-text">Mysql锁机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#redis-%E7%9A%84%E5%8D%95%E7%BA%BF%E7%A8%8B%E4%BD%93%E7%8E%B0%E5%9C%A8%E5%93%AA%E9%87%8C"><span class="toc-number">9.</span> <span class="toc-text">redis 的单线程体现在哪里</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B-volatile%E4%B8%8Esynchronized%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">10.</span> <span class="toc-text">多线程 volatile与synchronized关键字</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/09/28/bagu1/" title="八股文（一）"><img src="https://images.pexels.com/photos/10154570/pexels-photo-10154570.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="八股文（一）"/></a><div class="content"><a class="title" href="/2022/09/28/bagu1/" title="八股文（一）">八股文（一）</a><time datetime="2022-09-28T01:05:23.000Z" title="Created 2022-09-28 09:05:23">2022-09-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/06/stack-queue-and-tree/" title="栈、队列和树"><img src="https://s1.ax1x.com/2022/09/06/v7xLvQ.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="栈、队列和树"/></a><div class="content"><a class="title" href="/2022/09/06/stack-queue-and-tree/" title="栈、队列和树">栈、队列和树</a><time datetime="2022-09-06T09:21:54.000Z" title="Created 2022-09-06 17:21:54">2022-09-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/02/acm/" title="ACM模式"><img src="https://s1.ax1x.com/2022/09/02/vINehV.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ACM模式"/></a><div class="content"><a class="title" href="/2022/09/02/acm/" title="ACM模式">ACM模式</a><time datetime="2022-09-02T06:23:23.000Z" title="Created 2022-09-02 14:23:23">2022-09-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/17/not-found/" title="突然引不到包？"><img src="https://s1.ax1x.com/2022/08/17/vBivFK.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="突然引不到包？"/></a><div class="content"><a class="title" href="/2022/08/17/not-found/" title="突然引不到包？">突然引不到包？</a><time datetime="2022-08-17T00:04:53.000Z" title="Created 2022-08-17 08:04:53">2022-08-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/17/dao/" title="Dao层及各层的串联"><img src="https://s1.ax1x.com/2022/08/17/vBPJH0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Dao层及各层的串联"/></a><div class="content"><a class="title" href="/2022/08/17/dao/" title="Dao层及各层的串联">Dao层及各层的串联</a><time datetime="2022-08-17T00:04:30.000Z" title="Created 2022-08-17 08:04:30">2022-08-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Vanessa Yao</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
